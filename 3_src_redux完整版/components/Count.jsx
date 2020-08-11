@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 // 引入store
 import store from '../redux/store'
 // 引入count_action
-import {incrementAction,decrementAction,incrementWaitAction} from '../redux/count_action'
+import {incrementAction,decrementAction} from '../redux/count_action'
 export default class Count extends Component {
     state={
         school:'尚硅谷'
@@ -30,10 +30,11 @@ export default class Count extends Component {
         }
     }
     addWait=()=>{
-        // 获取用户输入的值
-        const {value} = this.refs.compone
-        store.dispatch(incrementWaitAction(value*1))  
-       
+        setTimeout(()=>{
+            // 获取用户输入的值
+            const {value} = this.refs.compone
+            store.dispatch(incrementAction(value*1))  
+        },500)
     }
     render() {
         return (

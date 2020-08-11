@@ -1,6 +1,5 @@
 // 此文件是定义为Count服务的reducer
-// 引入
-import {INCREMENT,DECREMENT} from './constant'
+// reducer不能混入业务逻辑
 /**
  * countReducer专门用于加工Count组件的状态
  * @param {*} prestate  第一次调用，传入的是underfined。第二次传入的是之前的状态
@@ -19,9 +18,9 @@ function countReducer (prestate=0,action){
    const {type,data} = action
    //根据stype的类型，决定接下来干什么
    switch (type){
-       case INCREMENT:
+       case 'increment':
            return prestate + data
-        case DECREMENT:
+        case 'decrement':
            return prestate - data    
         default:
             return prestate   
