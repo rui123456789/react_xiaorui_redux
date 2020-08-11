@@ -13,7 +13,7 @@ function countReducer (prestate=0,action){
    *     (1).根据action中的type值，决定要做哪一种操作（加？减）
    *     (2).根据action中的data值，决定加几或减几
    */
-   //从action中取出type，data 
+   //从action中取出type，data .
    const {type,data} = action
    //根据stype的类型，决定接下来干什么
    switch (type){
