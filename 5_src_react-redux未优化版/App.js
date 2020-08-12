@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
 import Count from './container/Count'
-import Person from './container/Person'
 export default class App extends Component {
     render() {
+        const {store} = this.props
         return (
             <div>
-                <Count/>
-                <br/>
-                <hr/>
-                <Person/>
+                <Count store={store}/>
             </div>
         )
     }
